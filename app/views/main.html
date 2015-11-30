@@ -1,0 +1,42 @@
+<form ng-submit="saveContact()">
+  <span ng-show="ADDING">
+    <label for="inputFirstName">First name:</label>
+    <input type="text" ng-model="newContact.firstName"
+           id="inputFirstName" class="form-control">
+    <label for="inputSurname">Surname:</label>
+    <input type="text" ng-model="newContact.surname"
+           id="inputSurname" class="form-control">
+    <label for="inputEmail">E-mail address:</label>
+    <input type="text" ng-model="newContact.email"
+           id="inputEmail" class="form-control">
+    <button type="submit" class="btn btn-success">Save</button>
+  </span>
+</form>
+<br/>
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>E-mail address</th>
+    <th><button ng-hide="ADDING" ng-click="ADDING = true" type="button" class="btn btn-primary">Add</button></th>
+  </tr>
+  <tr ng-repeat="contact in contacts">
+    <td ng-hide="contact.editMode">{{contact.firstName}} {{contact.surname}}</td>
+    <td ng-hide="contact.editMode">{{contact.email}}</td>
+    <td ng-show="contact.editMode">
+      <form ng-submit="contact.editMode = false">
+        <input title="First Name" type="text" ng-model="contact.firstName"
+               id="inputFirstName_{{contact.id}}" class="form-control">
+        <input title="First Name" type="text" ng-model="contact.surname"
+               id="inputSurname_{{contact.id}}" class="form-control">
+        <br/>
+        <input title="First Name" type="text" ng-model="contact.email"
+               id="inputEmail_{{contact.id}}" class="form-control">
+        <button type="submit" class="btn btn-success">Save</button>
+      </form>
+    </td>
+    <td>
+      <button class="btn" ng-click="edit(contact)">Edit</button>
+      <button class="btn btn-danger" ng-click="delete(contact)">Delete</button>
+    </td>
+  </tr>
+</table>
