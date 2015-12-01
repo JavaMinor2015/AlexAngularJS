@@ -17,10 +17,12 @@
   <tr>
     <th>Name</th>
     <th>E-mail address</th>
-    <th><button ng-hide="ADDING" ng-click="ADDING = true" type="button" class="btn btn-primary">Add</button></th>
+    <th>
+      <button ng-hide="ADDING" ng-click="ADDING = true" type="button" class="btn btn-primary">Add</button>
+    </th>
   </tr>
   <tr ng-repeat="contact in contacts">
-    <td ng-hide="contact.editMode">{{contact.firstName}} {{contact.surname}}</td>
+    <td ng-hide="contact.editMode">{{contact | contactName}}</td>
     <td ng-hide="contact.editMode">{{contact.email}}</td>
     <td ng-show="contact.editMode">
       <form ng-submit="contact.editMode = false">

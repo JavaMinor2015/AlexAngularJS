@@ -17,7 +17,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'angularTestsApp.filters'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -35,3 +36,5 @@ angular
         redirectTo: '/'
       });
   });
+
+angular.module('angularTestsApp.filters', []);
