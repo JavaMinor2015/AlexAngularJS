@@ -19,9 +19,10 @@ angular
     'ngSanitize',
     'ngTouch',
     'angularTestsApp.filters',
-    'angularTestsApp.directives'
+    'angularTestsApp.directives',
+    'ui-notification'
   ])
-  .config(function ($routeProvider) {
+  .config(function ($routeProvider, NotificationProvider) {
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
@@ -36,6 +37,16 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+
+    NotificationProvider.setOptions({
+      delay: 10000,
+      startTop: 20,
+      startRight: 10,
+      verticalSpacing: 20,
+      horizontalSpacing: 20,
+      positionX: 'right',
+      positionY: 'bottom'
+    });
   });
 
 angular.module('angularTestsApp.filters', []);

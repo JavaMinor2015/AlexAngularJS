@@ -4,6 +4,10 @@ describe('E2E: Contact form', function () {
 
   });
 
+  it('should delete a contact properly', function () {
+
+  });
+
   it('should disable the submit button when the form is invalid', function () {
     element(by.id('addNewContactBtn')).click();
     var addButton = element(by.id('saveNewContactBtn'));

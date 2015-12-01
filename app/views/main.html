@@ -25,7 +25,7 @@
     <td ng-hide="contact.editMode">{{contact | contactName}}</td>
     <td ng-hide="contact.editMode">{{contact.email}}</td>
     <td ng-show="contact.editMode">
-      <form ng-submit="contact.editMode = false">
+      <form ng-submit="edit(contact)">
         <input title="First Name" type="text" ng-model="contact.firstName"
                id="inputFirstName_{{contact.id}}" class="form-control">
         <input title="First Name" type="text" ng-model="contact.surname"
@@ -37,7 +37,7 @@
       </form>
     </td>
     <td>
-      <button class="btn" ng-click="edit(contact)">Edit</button>
+      <button class="btn" ng-click="contact.editMode = true">Edit</button>
       <button class="btn btn-danger" ng-click="delete(contact)">Delete</button>
     </td>
   </tr>
