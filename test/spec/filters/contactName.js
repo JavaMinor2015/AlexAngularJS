@@ -1,3 +1,4 @@
+'use strict';
 describe('Filter: contactName', function () {
   var contactNameFilter;
 

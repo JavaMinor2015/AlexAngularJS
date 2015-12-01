@@ -1,15 +1,15 @@
-<form ng-submit="saveContact()">
+<form ng-submit="saveContact()" novalidate name="newContactForm">
   <span ng-show="ADDING">
     <label for="inputFirstName">First name:</label>
-    <input type="text" ng-model="newContact.firstName"
+    <input type="text" ng-model="newContact.firstName" ng-required="true"
            id="inputFirstName" class="form-control">
     <label for="inputSurname">Surname:</label>
-    <input type="text" ng-model="newContact.surname"
+    <input type="text" ng-model="newContact.surname" ng-required="true"
            id="inputSurname" class="form-control">
     <label for="inputEmail">E-mail address:</label>
-    <input type="text" ng-model="newContact.email"
+    <input type="text" ng-model="newContact.email" ng-required="true"
            id="inputEmail" class="form-control">
-    <button type="submit" class="btn btn-success">Save</button>
+    <button id="saveNewContactBtn" type="submit" class="btn btn-success" ng-disabled="newContactForm.$invalid">Save</button>
   </span>
 </form>
 <br/>
@@ -18,7 +18,7 @@
     <th>Name</th>
     <th>E-mail address</th>
     <th>
-      <button ng-hide="ADDING" ng-click="ADDING = true" type="button" class="btn btn-primary">Add</button>
+      <button ng-hide="ADDING" ng-click="ADDING = true" type="button" class="btn btn-primary" id="addNewContactBtn">Add</button>
     </th>
   </tr>
   <tr ng-repeat="contact in contacts">
