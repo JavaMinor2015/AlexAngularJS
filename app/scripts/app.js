@@ -18,7 +18,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'angularTestsApp.filters'
+    'angularTestsApp.filters',
+    'angularTestsApp.directives'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -38,3 +39,4 @@ angular
   });
 
 angular.module('angularTestsApp.filters', []);
+angular.module('angularTestsApp.directives', []);
