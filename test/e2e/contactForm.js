@@ -1,11 +1,16 @@
+require('./pageobjects/ContactForm.js');
+
 describe('E2E: Contact form', function () {
+  var c = new CreateForm();
   beforeEach(function () {
     browser.get('http://localhost:9000');
-
   });
 
-  it('should delete a contact properly', function () {
-
+  it('my fancy page object', function () {
+    var c = PageObj.getCreateFormField();
+    PageObj.open();
+    c.FIRST_NAME.set("woop");
+    expect(c.FIRST_NAME.get()).toBe("woop");
   });
 
   it('should disable the submit button when the form is invalid', function () {
