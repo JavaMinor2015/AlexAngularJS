@@ -8,11 +8,14 @@
  * Controller of the angularTestsApp
  */
 angular.module('angularTestsApp')
-  .controller('MainCtrl', function ($scope, $resource, Notification) {
-      var contactResource = $resource(
-        'http://127.0.0.1:9688/contacts/:contactId',
-        {contactId: '@contactId'},
-        {update: {method: 'PUT'}, delete: {method:'DELETE'}});
+  .controller('MainCtrl', function ($scope, $resource, Notification, dataSource) {
+      console.log(dataSource.someMethod());
+      //var contactResource = $resource(
+      //  'http://127.0.0.1:9688/contacts/:contactId',
+      //  {contactId: '@contactId'},
+      //  {update: {method: 'PUT'}, delete: {method: 'DELETE'}});
+
+      var contactResource = dataSource.someMethod();
 
       contactResource.query(function (data) {
         $scope.contacts = data;

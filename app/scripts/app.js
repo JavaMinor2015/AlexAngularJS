@@ -20,6 +20,7 @@ angular
     'ngTouch',
     'angularTestsApp.filters',
     'angularTestsApp.directives',
+    'angularTestsApp.services',
     'ui-notification'
   ])
   .config(function ($routeProvider, NotificationProvider) {
@@ -55,3 +56,4 @@ angular
 
 angular.module('angularTestsApp.filters', []);
 angular.module('angularTestsApp.directives', []);
+angular.module('angularTestsApp.services', []);
