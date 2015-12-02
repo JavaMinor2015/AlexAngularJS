@@ -18,8 +18,8 @@ server.opts({path: PATH, version: '0.0.1' }, crossOrigin);
 
 // Data. As long as this REST-service stays alive, we can append a simple variable with data.
 var contacts = [
-	{ id: 1, firstName: 'Frank', surname: 'Muscles', email: 'frank@muscles.com', editMode: false },
-	{ id: 2, firstName: 'Eddy', surname: 'Valentino', email: 'eddy@valfam.co.uk', editMode: false }
+	{ id: 1, firstName: 'Frank', surname: 'Muscles', email: 'frank@muscles.com', editMode: false, isInvited : false},
+	{ id: 2, firstName: 'Eddy', surname: 'Valentino', email: 'eddy@valfam.co.uk', editMode: false, isInvited : false }
 ];
 
 // For testing errorhandling, let's throw an error every ten requests
@@ -27,12 +27,12 @@ var requestCount = 0;
 server.pre(function(req, res, next) {
 	res.header('Access-Control-Allow-Origin', '*');
 	requestCount++;
-	if(requestCount === 10) {
-		requestCount = 0;
-		console.error('-- Returning an internal server error to test errorhandling.');
-		res.send(500, 'An almost randomly selected internal server error.');
-		return;
-	}
+	//if(requestCount === 10) {
+	//	requestCount = 0;
+	//	console.error('-- Returning an internal server error to test errorhandling.');
+	//	res.send(500, 'An almost randomly selected internal server error.');
+	//	return;
+	//}
 
 	return next();
 });

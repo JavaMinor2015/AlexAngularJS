@@ -3,7 +3,7 @@
 // Generated on 2015-11-30 using
 // generator-karma 1.0.1
 
-module.exports = function(config) {
+module.exports = function (config) {
   'use strict';
 
   config.set({
@@ -42,8 +42,7 @@ module.exports = function(config) {
     ],
 
     // list of files / patterns to exclude
-    exclude: [
-    ],
+    exclude: [],
 
     // web server port
     port: 9876,
@@ -63,7 +62,8 @@ module.exports = function(config) {
     // Which plugins to enable
     plugins: [
       "karma-phantomjs-launcher",
-      "karma-jasmine"
+      "karma-jasmine",
+      "karma-jquery"
     ],
 
     // Continuous Integration mode

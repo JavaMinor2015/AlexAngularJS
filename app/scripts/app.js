@@ -34,6 +34,10 @@ angular
         controller: 'AboutCtrl',
         controllerAs: 'about'
       })
+      .when('/invite', {
+        templateUrl: 'views/invite.html',
+        controller: 'InviteCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

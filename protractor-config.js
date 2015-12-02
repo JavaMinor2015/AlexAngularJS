@@ -7,7 +7,6 @@ exports.config = {
     'test/e2e/*.js'
   ],
 
-
   capabilities: {
     'browserName': 'firefox'
   },
